@@ -1,0 +1,28 @@
+html{
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+    text-align: center;
+}
+
+
+body{
+    background-color: antiquewhite;
+}
+
+
+#title{
+    padding-bottom: 20px;
+}
+
+
+.panel-border{
+    height: 300px;
+    width: 50%;
+    background-color: transparent;
+    border: 3px solid black;
+    display: block;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
