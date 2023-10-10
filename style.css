@@ -3,18 +3,16 @@ html{
     font-family: 'Times New Roman', Times, serif;
     font-size: medium;
     text-align: center;
+    scroll-behavior: smooth;
 }
-
 
 body{
     background-color: antiquewhite;
 }
 
-
 #title{
     padding-bottom: 20px;
 }
-
 
 .panel-border{
     height: 300px;
@@ -26,3 +24,19 @@ body{
     margin-bottom: 30px;
 }
 
+.panel{
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+
+.beach, .forest-fire, .arctic{
+    max-height: 100%;
+}
+
+
+/* Panels */
+#p1{
+    background-color: antiquewhite;
+}
