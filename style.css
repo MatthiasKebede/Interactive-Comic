@@ -3,7 +3,7 @@ html{
     font-family: 'Times New Roman', Times, serif;
     font-size: medium;
     text-align: center;
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
 }
 body{
     background-color: antiquewhite;
@@ -13,7 +13,7 @@ nav{
 }
 
 #title{
-    padding-bottom: 40px;
+    padding-bottom: 60px;
 }
 
 /* Panel setup */
@@ -21,13 +21,16 @@ nav{
     height: 400px;
     width: 50%;
     background-color: transparent;
-    border: 3px solid black;
+    /* border: 3px solid black; */
     margin: auto;
-    margin-bottom: 40px;
+    margin-bottom: 200px;
 }
 .panel{
     height: 100%;
     width: 100%;
+}
+.speech{
+    margin-bottom: 20px;
 }
 
 
