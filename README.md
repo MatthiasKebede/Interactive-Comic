@@ -41,4 +41,4 @@ Sam's holiday was almost over, He soon returned back to his country. Meanwhile, 
 
 Panel 6:
 Narrator:
-Sam decided to go his beach and tell all the kids to recycle their bottles. Also, sam advised all his friends to be more environmentally friendly. As a result, Sam has saved the world from climate change.
+Sam decided to go his beach and tell all the kids to recycle their bottles. Also, sam advised all his friends to be more environmentally friendly. As a result, Sam was a hero that has saved the world from climate change.
