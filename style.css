@@ -5,38 +5,63 @@ html{
     text-align: center;
     scroll-behavior: smooth;
 }
-
 body{
     background-color: antiquewhite;
 }
-
-#title{
-    padding-bottom: 20px;
+nav{
+    position: fixed;
 }
 
+#title{
+    padding-bottom: 40px;
+}
+
+/* Panel setup */
 .panel-border{
-    height: 300px;
+    height: 400px;
     width: 50%;
     background-color: transparent;
     border: 3px solid black;
-    display: block;
     margin: auto;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
-
 .panel{
-    display: block;
     height: 100%;
     width: 100%;
 }
 
 
+/* Background images */
 .beach, .forest-fire, .arctic{
-    max-height: 100%;
+    max-height: 95.5%;
 }
 
 
-/* Panels */
-#p1{
+
+
+
+/* Page transition */
+#page-end {
+    border-left: 3px solid black;
+    height: 100%;
+    position: fixed;
+    right: -100%;
+    top: 0%;
+    /* display: none; */
     background-color: antiquewhite;
+    width: 100%;
+    animation: turning 3s forwards;
+}
+@keyframes turning {
+    0% {right: -100%;}
+    90% {right: 9%; opacity: 1;}
+    99% {right: 0%; opacity: 0;} /* opacity: 0.2; */
+    100% {right: 0%; opacity: 0; display: none;}
+}
+
+
+
+/* Default text types */
+p, h1, h2{
+    margin: 0;
 }

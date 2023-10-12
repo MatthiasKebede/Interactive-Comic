@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Comic</title>
     <link rel="stylesheet" type="text/css" href="./style.css" />
-    <!-- <link rel="icon" href="./src/blank.png" /> -->
+    <link rel="icon" href="./img/recycle.png" />
 </head>
 <body>
     <div id="title">
@@ -14,47 +14,53 @@
 
     <div class="panel-border">
         <div class="panel" id="p1">
-            <!-- Panel 1 -->
+            <p class="speech" id="p1-text" style="opacity: 0;">Once upon a time...</p>
             <img class="beach" src="./img/Beach.svg">
         </div>
     </div>
 
     <div class="panel-border">
         <div class="panel" id="p2">
-            <!-- Panel 2 -->
+            <p class="speech" id="p2-text" style="opacity: 0;">The End.</p>
             <img class="beach" src="./img/Beach.svg">
         </div>
     </div>
 
-    <div class="panel-border">
+    <!-- <div class="panel-border">
         <div class="panel" id="p3">
-            <!-- Panel 3 -->
+            <p class="speech" id="p3-text" style="opacity: 0;">Panel 3<p>
             <img class="forest-fire" src="./img/Forest Fire.svg">
         </div>
     </div>
 
     <div class="panel-border">
         <div class="panel" id="p4">
-            <!-- Panel 4 -->
+            <p class="speech" id="p4-text" style="opacity: 0;">Panel 4<p>
             <img class="forest-fire" src="./img/Forest Fire.svg">
         </div>
     </div>
 
     <div class="panel-border">
         <div class="panel" id="p5">
-            <!-- Panel 5 -->
+            <p class="speech" id="p5-text" style="opacity: 0;">Panel 5<p>
             <img class="arctic" src="./img/Arctic.svg">
         </div>
     </div>
 
     <div class="panel-border">
         <div class="panel" id="p6">
-            <!-- Panel 6 -->
+            <p class="speech" id="p6-text" style="opacity: 0;">Panel 6<p>
             <img class="arctic" src="./img/Arctic.svg">
         </div>
+    </div> -->
+
+    <div id="sound-storage">
+        <audio src="./audio/water.mp3"></audio>
+        <audio src="./audio/fire.mp3"></audio>
+        <audio src="./audio/ice.mp3"></audio>
     </div>
 
-
+    <div id="page-end"  style="display: none;"></div>
 
     <script src="./script.js"></script>
 </body>
