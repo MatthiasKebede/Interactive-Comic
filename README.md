@@ -1,9 +1,10 @@
 # Interactive-Comic
  
-Project Name
-Project Description: what is the project, what is the overall concept and theme, and what kind of experience you were striving to create.
-Process: How did you go about implementing the concept. Describe your role and what your contribution was.
-Reflection/Evaluation: This should bookend the initial concept and talk about whether your expectations and goals were met in the process of building the final working version.
+Project Name: Same's Adventure
+Project Description: A comic following a young boy named Sam, who travels the world and learns about the effects of Global Warming from talking animals. The comic was done in the style of a children's book, and seeks to tackle a serious topic in an interactive and engaging way.
+Process: My role was mainly to get everything implemented in the website. I first made a framework, and once we had the illustrations and dialogue ready I just put the pieces in their places and then spent some time getting the interaction to work.
+Reflection/Evaluation: The whole process took a lot more time than I was prepared for, but it went well overall. I'm glad I was able to get the page-turning animation to work, since that was the feature I wanted the most and that also gave me a lot of trouble.
+
 
 Project Transcription: 
 

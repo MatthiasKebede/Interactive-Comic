@@ -28,18 +28,79 @@ nav{
 .panel{
     height: 100%;
     width: 100%;
+    position: relative;
 }
 .speech{
     margin-bottom: 20px;
 }
 
 
-/* Background images */
-.beach, .forest-fire, .arctic{
+/* Images */
+.bg{
     max-height: 95.5%;
 }
 
 
+#top-sam, #bot-sam{
+    position: absolute;
+    top: 75%;
+    left: 30%;
+    max-height: 25%;
+}
+#top-sam{
+    max-height: 35%;
+    top: 60%;
+}
+#top-animal{
+    position: absolute;
+    top: 48%;
+    left: 35%;
+    max-height: 50%;
+}
+#bot-animal{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    max-height: 25%;
+}
+
+svg{
+    position: absolute;
+    opacity: 0;
+    max-height: 25%;
+}
+#topLefty{
+    top: 45%;
+    left: 67%;
+    display: none;
+}
+#topRighty{
+    top: 38%;
+    left: 30%;
+    display: none;
+}
+#botLefty{
+    top: 55%;
+    left: 55%;
+}
+#botRighty{
+    top: 50%;
+    left: 15%;
+}
+
+
+#Samthank,#HiS,#HiT,#Deertext,#Penguintext{
+    display: none;
+}
+#topLefty #Turtletext{
+    display: none;
+}
+#topRighty #Deertext{
+    display: block;
+}
+#botRighty #Samthank, #topLefty #Samthank{
+    display: block;
+}
 
 
 

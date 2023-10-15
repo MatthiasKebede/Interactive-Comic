@@ -1,6 +1,6 @@
 console.log("check");
 
-
+var currentpage = 1;
 var currentaudio = 0;
 var narration = ["Once upon a time, there was a little boy named Sam. Sam loved to travel and explore the world. However, Sam was no ordinary boy. Sam had a special superpower that allowed him to understand and speak to animals.",
 "One day, Sam went to Mauritius to enjoy his summer at the beach. Sam swam a lot at the beach so he had to drink water. He grabbed his water bottle, finished it up, and carelessly threw it. Later on, he came across a little turtle.",
@@ -9,31 +9,27 @@ var narration = ["Once upon a time, there was a little boy named Sam. Sam loved 
 "Sam's holiday was almost over, He soon returned back to his country. Meanwhile, he was thinking of how to save the world while returning back.",
 "Sam decided to go his beach and tell all the kids to recycle their bottles. Also, sam advised all his friends to be more environmentally friendly. As a result, Sam was a hero that has saved the world from climate change."]
 
-var dialog = [];
-// Panel 2 Dialogue: Turtle: "Hi Sam", sam looks confused that he understands the turtle , Sam: "Hi there." Turtle: "I see that you threw your water bottle here, you know, us turtles are very sensitive to plastic and cannot stand it, we would really appreciate it if you would use more sustainable bottles for your water." Sam: "Thank you for informing me of this, I did not know this before."
-// Panel 3 Dialogue: Deer: "Hi Sam", Sam: "Hi there." Deer: "I see that you are making a campfire, you know, us deers are living here in the forest and are very exposed to forest fires. Please make sure that you take down the campfire after you are done with it as many people just leave it there." Sam: "Thank you for informing me of this, I did not know this before."
-// Panel 4 Dialogue: Penguin: "Hi Sam", Sam: "Hi there." Penguin: "I see you are skating, that's very cool. You know, us penguins are living here in the glaciers and are very scared of global warming. I think that climate change is real and it is affecting us penguins since the sea levels are rising gradually. I would love it if you could tell your people back home to care more about the environment to help us all with this matter." Sam: "Thank you for informing me of this, I did not know this before."
-
-
-
-
-
-
 
 // HTML Elements
-// var p1 = document.getElementById("p1");
-// var p2 = document.getElementById("p2");
-// var p3 = document.getElementById("p3");
-// var p4 = document.getElementById("p4");
-// var p5 = document.getElementById("p5");
-// var p6 = document.getElementById("p6");
-// var p1_text = document.getElementById("p1-text");
 var page_end = document.getElementById("page-end"); // For page turning animation
+var recycleicon = document.getElementById("recycle-icon");
+var toptext = document.getElementById("p1-text");
+var bottext = document.getElementById("p2-text");
+var topbg = document.getElementById("top-bg");
+var botbg = document.getElementById("bot-bg");
+var topsam = document.getElementById("top-sam");
+var botsam = document.getElementById("bot-sam");
+var topanimal = document.getElementById("top-animal");
+var botanimal = document.getElementById("bot-animal");
+var toplefty = document.getElementById("topLefty");
+var toprighty = document.getElementById("topRighty");
+var botlefty = document.getElementById("botLefty");
+var botrighty = document.getElementById("botRighty");
 
 // Element groups
 var all_panels = document.getElementsByClassName("panel");
 var all_text = document.getElementsByClassName("speech");
-var images = document.getElementsByTagName("img");
+var all_images = document.getElementsByTagName("img");
 var soundfiles = document.getElementsByTagName("audio");
 
 
@@ -48,10 +44,14 @@ for (let item of all_panels) {
 
 // Function definitions
 function speechPop() { // Make speech bubbles appear when clicking in panel
-    if (this.firstElementChild.style.opacity == "0")
-        this.firstElementChild.style.opacity = "1";
-    else
-        this.firstElementChild.style.opacity = "0";
+    for (let subitem of this.children) {
+        if (subitem.className != "bg") {
+            if (subitem.style.opacity == 0)
+                subitem.style.opacity = 1;
+            else
+                subitem.style.opacity = 0;
+        }
+    }
 }
 
 function playSound() { // Play audio on mouseover
@@ -61,9 +61,9 @@ function playSound() { // Play audio on mouseover
         soundfiles[currentaudio].volume = 1.0;
     soundfiles[currentaudio].play();
 }
-function pauseSound() { // Stop audio on mouseout, // reset timestamp
+function pauseSound() { // Stop audio on mouseout
     soundfiles[currentaudio].pause();
-    // soundfiles[currentaudio].currentTime = 0;
+    // soundfiles[currentaudio].currentTime = 0; // reset timestamp
 }
 
 function pageTurn() { // Animation for turning the page
@@ -76,32 +76,68 @@ function pageTurn() { // Animation for turning the page
 
 function updatePage() { // Update contents of page while animation is covering it
     window.scrollTo(0,0); // Scroll back to top of page
-    for (let item of images) { // Cycle to next backgrounds, change accompanying audio and text
-        if (item.className == "beach") {
-            item.src = "./img/Forest Fire.svg";
-            item.className = "forest-fire";
+    switch(currentpage) { // Cycle to next backgrounds, change accompanying audio and text
+        case 1: 
+            topbg.src = "./img/Forest Fire.svg";
+            botbg.src = "./img/Arctic.svg";
+            topsam.src = "./img/sampray.png";
+                topsam.style.top = "65%"; topsam.style.left = "60%";
+            botsam.src = "./img/samcold.png";
+                botsam.style.top = "78%"; botsam.style.left = "25%";
+            topanimal.src = "./img/deer.png"; topanimal.style.display = "block";
+            botanimal.src = "./img/penguin.png"; botanimal.style.display = "block";
+                botanimal.style.top = "70%"; botanimal.style.left = "40%";
+            toplefty.style.display = "block"; toprighty.style.display = "block"; botlefty.style.display = "block"; botrighty.style.display = "block";
+                botrighty.style.top = "53%"; botrighty.style.left = "9%";
+                botlefty.style.top = "45%"; botlefty.style.left = "45%";
+                botlefty.getElementById("Turtletext").style.display = "none";
+                botlefty.getElementById("Penguintext").style.display = "block";
             currentaudio = 1;
-            all_text[0].innerHTML = narration[2];
-            all_text[1].innerHTML = narration[3];
-        }
-        else if (item.className == "forest-fire") { 
-            item.src = "./img/Arctic.svg";
-            item.className = "arctic";
+            toptext.innerHTML = narration[2];
+            bottext.innerHTML = narration[3];
+            currentpage = 2;
+            break;
+        case 2: 
+            topbg.src = "./img/Beach.svg";
+            botbg.src = "./img/Beach.svg";
+            topsam.src = "./img/sambottle.png";
+                topsam.style.top = "60%"; topsam.style.left = "50%";
+            botsam.src = "./img/samold.png";
+                botsam.style.top = "65%"; botsam.style.left = "60%"; botsam.style.maxHeight = "35%";
+            topanimal.src = "./img/recycle.png"; topanimal.style.display = "none";
+            botanimal.src = "./img/recycle.png"; botanimal.style.display = "none";
+            toplefty.style.display = "none"; toprighty.style.display = "none"; botlefty.style.display = "none"; botrighty.style.display = "none"; 
             currentaudio = 2;
-            all_text[0].innerHTML = narration[4];
-            all_text[1].innerHTML = narration[5];
-        }
-        else if (item.className == "arctic") {
-            item.src = "./img/Beach.svg";
-            item.className = "beach";
+            toptext.innerHTML = narration[4];
+            bottext.innerHTML = narration[5];
+            currentpage = 3;
+            break;
+        case 3:
+            topbg.src = "./img/Beach.svg";
+            botbg.src = "./img/Beach.svg";
+            topsam.src = "./img/sambottle.png";
+                topsam.style.top = "60%"; topsam.style.left = "30%";
+            botsam.src = "./img/sambeach.png";
+                botsam.style.top = "75%"; botsam.style.left = "30%"; botsam.style.maxHeight = "25%";
+            topanimal.src = "./img/recycle.png"; topanimal.style.display = "none";
+            botanimal.src = "./img/turtle.png"; botanimal.style.display = "block";
+                botanimal.style.top = "80%"; botanimal.style.left = "50%";
+            botlefty.style.display = "block"; botrighty.style.display = "block";
+                botrighty.style.top = "50%"; botrighty.style.left = "15%";
+                botlefty.style.top = "55%"; botlefty.style.left = "55%";
+                botlefty.getElementById("Penguintext").style.display = "none";
+                botlefty.getElementById("Turtletext").style.display = "block";
             currentaudio = 0;
-            all_text[0].innerHTML = narration[0];
-            all_text[1].innerHTML = narration[1];
-        }
+            toptext.innerHTML = narration[0];
+            bottext.innerHTML = narration[1];
+            currentpage = 1;
+            break;
     }
-
-    for (let item of all_text) { // Re-hide any visible text in panels
-        if (item.style.opacity != 0)
-            item.style.opacity = 0;
+    for (let item of all_panels) { // Re-hide any visible items in panels
+        for (let subitem of item.children) {
+            if (subitem.className != "bg") {
+                subitem.style.opacity = 0;
+            }
+        }
     }
 }
